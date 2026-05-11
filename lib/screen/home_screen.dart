@@ -20,6 +20,9 @@ class _FirstScreenState extends State<FirstScreen> {
   final _scroller = ScrollController();
   bool _gridstyle = true;
 
+  final _service = ProductService();
+  late Future<List<ProductModel>> _futureData = _service.readApi();
+
   @override
   void initState() {
     super.initState();
@@ -89,9 +92,6 @@ class _FirstScreenState extends State<FirstScreen> {
       ],
     );
   }
-
-  final _service = ProductService();
-  late Future<List<ProductModel>> _futureData = _service.readApi();
 
   Widget _buildBody() {
     return Center(
@@ -190,10 +190,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     "USD ${item.price.toStringAsFixed(2)}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.red,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ),
               ],
