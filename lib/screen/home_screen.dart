@@ -190,7 +190,10 @@ class _FirstScreenState extends State<FirstScreen> {
                     "USD ${item.price.toStringAsFixed(2)}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.primaryColor,
+                    ),
                   ),
                 ),
               ],
